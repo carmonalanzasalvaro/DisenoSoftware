@@ -1,13 +1,13 @@
-package introduccionjava.programa1;
+package Introduccionjava.Programa1;
 import java.util.Scanner;
 
 public class CalculadoraDeEdad {
 
-    public void CalculadoraDeEdad() {
+    public void CalcularEdad() {
         
         int year;
 
-        Scanner scanner = new sc(System.in)
+        Scanner scanner = new Scanner(System.in)
         System.out.println("Ingrese su año de nacimiento: ");
     
         year = scanner.nextInt();
@@ -16,7 +16,5 @@ public class CalculadoraDeEdad {
         scanner.close();
 
     }
-
-
 
 }
