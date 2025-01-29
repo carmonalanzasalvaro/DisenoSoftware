@@ -7,7 +7,7 @@ public class CalculadoraDeEdad {
         
         int year;
 
-        Scanner scanner = new Scanner(System.in)
+        Scanner scanner = new Scanner(System.in);	
         System.out.println("Ingrese su año de nacimiento: ");
     
         year = scanner.nextInt();
