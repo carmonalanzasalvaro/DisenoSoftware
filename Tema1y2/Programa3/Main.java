@@ -14,3 +14,5 @@ class Main {
     }
 }
 
+// Para ver el diagrama UML asociado, consulta el archivo UML_Person_Class_Simple.png en el mismo directorio:
+// UML_Person_Class_Simple.png
