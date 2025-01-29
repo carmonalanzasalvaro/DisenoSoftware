@@ -20,7 +20,7 @@ El siguiente diagrama UML corresponde al diseño de la clase `Person` en el cód
 
 A continuación, una captura del código fuente relacionado con este diagrama UML:
 
-![Captura del Código](./Captura.png)
+![Captura del Código](./Codigo.png)
 
 ---
 
