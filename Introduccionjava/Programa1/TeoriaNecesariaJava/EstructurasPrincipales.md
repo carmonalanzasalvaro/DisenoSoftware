@@ -233,18 +233,4 @@ try {
 
 ---
 
-## 🚀 **Extras recomendados**
-✔️ Bucles (`for`, `while`, `do-while`).  
-✔️ Estructuras condicionales (`if`, `switch`).  
-✔️ Programación funcional en Java (`Streams`, `Lambdas`).  
-✔️ Introducción a bases de datos con JDBC.  
-✔️ Introducción a Spring Boot.  
 
----
-💡 **Consejo para tu curso en GitHub**  
-- Usa archivos `.md` organizados por temas.  
-- Incluye ejemplos prácticos.  
-- Agrega ejercicios al final de cada tema.  
-- Utiliza imágenes y diagramas para explicar mejor.  
-
-📚 **¡Felicidades por tu curso!** 🚀😊
