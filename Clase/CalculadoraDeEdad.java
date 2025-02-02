@@ -1,4 +1,4 @@
-package Introduccionjava.Programa1;
+package Clase;
 import java.util.Scanner;
 
 public class CalculadoraDeEdad {
