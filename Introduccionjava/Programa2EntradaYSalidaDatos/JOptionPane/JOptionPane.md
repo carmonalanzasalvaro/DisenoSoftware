@@ -83,4 +83,4 @@ JOptionPane.showMessageDialog(null, "Has elegido: " + colorElegido);
 ✔️ Permite mostrar mensajes, capturar información y confirmar decisiones de forma sencilla.  
 ✔️ Es una **alternativa rápida a la consola (`Scanner`)** en Java.  
 
-🚀 **¡Ahora puedes usar `JOptionPane` para crear programas interactivos en Java!** 🔥🎯
+
