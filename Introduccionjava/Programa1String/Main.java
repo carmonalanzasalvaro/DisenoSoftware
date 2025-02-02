@@ -1,4 +1,4 @@
-package Introduccionjava.Programa1;
+package Introduccionjava.Programa1String;
 
 public class Main {
     public static void main(String[] args) {
@@ -66,5 +66,6 @@ public class Main {
         System.out.println("Número entero convertido a String: " + String.valueOf(numero));
         System.out.println("Número decimal convertido a String: " + String.valueOf(numeroDecimal));
         System.out.println("Booleano convertido a String: " + String.valueOf(valorBooleano));
+    
     }
 }
