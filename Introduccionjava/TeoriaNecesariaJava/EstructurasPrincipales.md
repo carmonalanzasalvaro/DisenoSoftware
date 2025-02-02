@@ -1,4 +1,4 @@
-# Curso de Java 🚀
+# Programación en Java 🚀
 
 ## **Tipos de datos (primitivos)**
     
