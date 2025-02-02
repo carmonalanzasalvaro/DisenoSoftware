@@ -1,5 +1,10 @@
 # Programación en Java 🚀
 
+[📂 String](https://github.com/carmonalanzasalvaro/DisenoSoftware/tree/main/Introduccionjava/Programa1String)
+[📂 Entrada y Salida de datos](https://github.com/carmonalanzasalvaro/DisenoSoftware/tree/main/Introduccionjava/Programa2EntradaYSalidaDatos)
+
+Entrada y Salida de datos: 
+
 ## **Tipos de datos (primitivos)**
     
 ### **Enteros**

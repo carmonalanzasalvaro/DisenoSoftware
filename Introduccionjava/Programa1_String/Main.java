@@ -1,4 +1,4 @@
-package Introduccionjava.Programa1String;
+package Introduccionjava.Programa1_String;
 
 public class Main {
     public static void main(String[] args) {

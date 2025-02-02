@@ -1,4 +1,4 @@
-package Introduccionjava.Programa2EntradaYSalidaDatos.Scanner;
+package Introduccionjava.Programa2_EntradaYSalidaDatos.Scanner;
 
 import java.util.Scanner;
 
@@ -23,7 +23,7 @@ public class Main {
         double altura = scanner.nextDouble();
         System.out.println("Tu altura es " + altura + " metros.");
 
-        // 📌 Leer un solo carácter (se debe consumir el salto de línea antes)
+        // 📌 Leer un solo carácter (se debe consumir el salto de línea antes, debido a que nextInt/Double solo leen el número sin el '\n')
         scanner.nextLine(); // Consumir la línea pendiente
         System.out.print("Introduce la inicial de tu apellido: ");
         char inicial = scanner.nextLine().charAt(0);
