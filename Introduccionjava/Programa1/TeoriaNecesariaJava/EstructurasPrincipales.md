@@ -61,18 +61,25 @@ Boolean esVerdadero = true;
 ```
 
 ### **4. Listas (`ArrayList`)**
+Las listas (`ArrayList`) son estructuras dinámicas que permiten almacenar múltiples elementos sin un tamaño fijo, a diferencia de los arreglos (`arrays`), que tienen una longitud fija.
+
+📌 **¿Por qué usar `ArrayList` en lugar de un array?**  
+✔️ Permite **agregar** y **eliminar** elementos dinámicamente.  
+✔️ Ofrece **métodos avanzados** para manipular datos (`add()`, `remove()`, `size()`, etc.).  
+✔️ Se usa en **colecciones genéricas**, almacenando solo objetos (requiere Clases Envolventes para tipos primitivos).
+
+📌 **Ejemplo de uso:**
 ```java
 import java.util.ArrayList;
 
-ArrayList<String> lista = new ArrayList<>();
-lista.add("Java");
-lista.add("Python");
-lista.add("C++");
+ArrayList<String> nombres = new ArrayList<>();
+nombres.add("Juan");
+nombres.add("Ana");
+nombres.add("Pedro");
 
-System.out.println(lista.get(0)); // Obtener el primer elemento
-lista.remove(1); // Eliminar "Python"
-System.out.println(lista.size()); // Tamaño de la lista
-```
+System.out.println(nombres.get(0)); // Imprime: Juan
+nombres.remove(1); // Elimina "Ana"
+System.out.println(nombres.size()); // Imprime: 2 (tamaño actual)
 
 ---
 
