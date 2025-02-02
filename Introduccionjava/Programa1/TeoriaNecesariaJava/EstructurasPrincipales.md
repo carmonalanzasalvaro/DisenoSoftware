@@ -80,7 +80,7 @@ nombres.add("Pedro");
 System.out.println(nombres.get(0)); // Imprime: Juan
 nombres.remove(1); // Elimina "Ana"
 System.out.println(nombres.size()); // Imprime: 2 (tamaño actual)
-
+```
 ---
 
 ## **Variables en Java** 🔢
