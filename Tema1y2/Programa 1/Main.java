@@ -32,7 +32,7 @@ public class Main{
     public static void main(String[] args) {
         FormaDeJuego objeto1 = new PiezaDeJuego();
         FormaDeJuego objeto2 = new PiezaDama();
-
+        
         objeto1.muestraFigura();
         objeto2.muestraFigura();
         ((PiezaDama)objeto2).muevePieza();
