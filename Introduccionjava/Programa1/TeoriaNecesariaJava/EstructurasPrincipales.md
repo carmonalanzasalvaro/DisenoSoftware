@@ -43,6 +43,10 @@ nombres[2] = "Pedro";
 ```
 
 ### **3. Clases Envolventes (Wrapper Classes)**
+
+En Java, los tipos de datos primitivos (`int`, `double`, `boolean`, etc.) no son objetos, por lo que no pueden usarse en colecciones genéricas como `ArrayList<T>`, ni tienen métodos asociados.  
+Para solucionar esto, existen las **Clases Envolventes**, que convierten los primitivos en objetos y proporcionan métodos útiles para manipularlos.
+
 | Tipo primitivo | Clase envolvente |
 |---------------|-----------------|
 | `int`        | `Integer`       |
