@@ -116,7 +116,7 @@ public class Coche extends Vehiculo {
 ---
 
 ## 🔹 **4. `Main.java` (Menú de Gestión de Coches)**
-Este archivo gestiona la **interacción con el usuario**.
+Este archivo gestiona la **interacción con el usuario** y permite administrar los coches mediante un **menú interactivo**.
 
 ```java
 public class Main {
@@ -132,23 +132,25 @@ public class Main {
                 case 1:
                     System.out.print("Introduce el bastidor: ");
                     int bastidor = sc.nextInt();
-                    coches.add(new Coche(bastidor, sc));
+                    coches.add(new Coche(bastidor));
                     break;
-                case 2:
-                    System.out.println("Función de modificar datos en desarrollo...");
+                case 2: // ⚠️ NO IMPLEMENTADO
+                    System.out.println("⚠️ Función de modificar datos en desarrollo...");
                     break;
                 case 3:
                     for (int i = 0; i < coches.size(); i++) {
                         System.out.println("Bastidor: " + coches.get(i).getBastidor());
+                        System.out.println("Marca: " + coches.get(i).getMarca());
                     }
                     break;
                 case 4:
-                    System.out.println("Saliendo...");
+                    System.out.println("Saliendo del programa...");
                     break;
             }
         }
         sc.close();
     }
+
     public static void menu() {
         System.out.println("1. Crear coche");
         System.out.println("2. Modificar datos");
@@ -157,6 +159,7 @@ public class Main {
     }
 }
 ```
+🔍 [📂 Explicación Detallada](https://github.com/carmonalanzasalvaro/DisenoSoftware/blob/main/Introduccionjava/Programa3_ClasesYObjetos/Explicaciones/Main/README.md)
 
 ### **🛠️ Características:**
 ✔️ Usa `Scanner` para capturar entradas del usuario.  
