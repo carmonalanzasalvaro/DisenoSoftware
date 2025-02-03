@@ -48,7 +48,9 @@ public abstract class Vehiculo {
     public int getMotor() { return motor; }
     public void setMotor(int motor) { this.motor = motor; }
 }
+
 ```
+🔍 [📂 Explicación Detallada](https://github.com/carmonalanzasalvaro/DisenoSoftware/blob/main/Introduccionjava/Programa3_ClasesYObjetos/Explicaciones/Vehiculo/README.md)
 
 ### **🛠️ Características:**
 ✔️ `abstract` impide crear instancias de `Vehiculo` directamente.  
