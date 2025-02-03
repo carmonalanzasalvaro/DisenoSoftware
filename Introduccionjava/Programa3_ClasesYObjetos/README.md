@@ -18,6 +18,8 @@ Los coches se gestionan mediante un **menú interactivo** donde se pueden:
 3️⃣ **Mostrar todos los coches registrados.**  
 4️⃣ **Salir.**  
 
+🔍 [📂 Explicación Detallada](https://github.com/carmonalanzasalvaro/DisenoSoftware/blob/main/Introduccionjava/Programa3_ClasesYObjetos/Explicaciones/Descripcion_Proyecto/README.md)
+
 ---
 
 ## 🔹 **2. `Vehiculo.java` (Clase Abstracta)**
