@@ -1,89 +1,136 @@
 # 🎛️ Explicación: `Main.java`
 
-## 📜 ¿Qué hace `Main.java`?
-Este archivo **gestiona la interacción con el usuario**, proporcionando un **menú interactivo**  
-para la **creación y visualización** de coches.  
+## 📜 **¿Qué hace `Main.java`?**
+`Main.java` gestiona la interacción con el usuario a través de un **menú interactivo**,  
+donde se pueden **crear, visualizar y modificar coches**.
 
-⚠️ **Nota:** La opción **"Modificar datos de un coche" aún no está implementada** en el código.
-
----
-
-## 📌 **¿Cómo funciona el menú interactivo?**
-El programa muestra un **menú en consola** donde el usuario puede seleccionar una opción.  
-✔️ Se usa un **bucle `while`** para mantener el menú activo hasta que el usuario elija salir.  
-✔️ Se usa un **`switch-case`** para manejar cada opción del menú.
-
-```java
-int option = 0;
-while (option != 4) { // 🔹 Se repite hasta que el usuario elija salir
-    menu(); // ✅ Muestra las opciones en consola
-    option = sc.nextInt(); // 🔹 Captura la opción seleccionada
-```
-
-📌 **El usuario puede elegir:**
-1️⃣ **Crear coche** 🏎️  
-2️⃣ **Modificar datos de un coche** 🔧 *(No implementado)*  
-3️⃣ **Mostrar todos los coches registrados** 📋  
-4️⃣ **Salir del programa** 🚪  
+✔️ **No maneja la lista de coches directamente.**  
+✔️ **Utiliza `CocheFactory` para la creación y almacenamiento de coches.**  
+✔️ **Separa la lógica de impresión con `mostrarCoches()`.**  
 
 ---
 
-## 📌 **¿Cómo se crean los coches en `Main`?**
-✔️ **El usuario ingresa un número de bastidor** para crear un coche.  
-✔️ **`Coche` solicita los datos adicionales al usuario (marca, motor, peso, dimensiones).**  
-✔️ **Se almacena en una `List<Coche>` para gestionarlos luego.**  
-
+## 📌 **Clase `Main` (Implementación)**
 ```java
-System.out.print("Introduce el bastidor del coche: ");
-int bastidor = sc.nextInt();
-Coche coche = new Coche(bastidor);
-coches.add(coche);
-```
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int option = 0;
 
-📌 **El coche recién creado se almacena en la lista `coches`.**
+        while (option != 4) {
+            menu();
+            option = sc.nextInt();
+            switch (option) {
+                case 1:
+                    CocheFactory.crearCocheUsuario();
+                    break;
+                case 2:
+                    System.out.println("⚠️ Función de modificar datos en desarrollo...");
+                    break;
+                case 3:
+                    mostrarCoches();
+                    break;
+                case 4:
+                    System.out.println("Saliendo del programa...");
+                    break;
+            }
+        }
+        sc.close();
+    }
 
----
+    public static void mostrarCoches() {
+        for (int i = 0; i < CocheFactory.getCoches().size(); i++) {
+            System.out.println("=========================================");
+            System.out.println("🚗 Coche " + (i + 1) + ":");
+            System.out.println("-----------------------------------------");
+            System.out.println(
+                "       _______\n" +
+                "      //  ||\\ \\\n" +
+                " ____//___||_\\ \\___\n" +
+                " )  _          _    \\\n" +
+                " |_/ \\________/ \\___|\n" +
+                "___\\_/________\\_/______"
+            );
+            System.out.println("-----------------------------------------");
+            System.out.println("Bastidor: " + CocheFactory.getCoches().get(i).getBastidor());
+            System.out.println("Motor: " + CocheFactory.getCoches().get(i).getMotor() + " cc");
+            System.out.println("Peso: " + CocheFactory.getCoches().get(i).getPeso() + " kg");
+            System.out.println("Largo: " + CocheFactory.getCoches().get(i).getLargo() + " cm");
+            System.out.println("Ancho: " + CocheFactory.getCoches().get(i).getAncho() + " cm");
+            System.out.println("Marca: " + CocheFactory.getCoches().get(i).getMarca());
+            System.out.println("=========================================\n");
+        }
+    }
 
-## 📌 **¿Cómo se muestran todos los coches registrados?**
-✔️ **Se recorre la lista `coches` y se imprimen los datos de cada coche.**  
-✔️ **Si la lista está vacía, se muestra un mensaje de advertencia.**
-
-```java
-if (coches.isEmpty()) {
-    System.out.println("⚠️ No hay coches registrados.");
-} else {
-    for (int i = 0; i < coches.size(); i++) {
-        System.out.println("Bastidor: " + coches.get(i).getBastidor());
-        System.out.println("Marca: " + coches.get(i).getMarca());
+    public static void menu() {
+        System.out.println("1. Crear coche");
+        System.out.println("2. Modificar datos");
+        System.out.println("3. Mostrar coches");
+        System.out.println("4. Salir");
     }
 }
 ```
 
 ---
 
-## ⚠️ **Opción "Modificar datos" aún no implementada**
-Actualmente, en el código, **la opción 2 del menú (`Modificar datos`) muestra un mensaje pero no realiza ninguna acción.**  
-
+## 📌 **Explicación de los Métodos**
+### **🔹 `menu()`**
 ```java
-case 2: // Modificar datos (NO IMPLEMENTADO)
-    System.out.println("⚠️ Función de modificar datos en desarrollo...");
-    break;
+public static void menu() {
+    System.out.println("1. Crear coche");
+    System.out.println("2. Modificar datos");
+    System.out.println("3. Mostrar coches");
+    System.out.println("4. Salir");
+}
 ```
-
-📌 **Si en el futuro se implementa, el código deberá permitir modificar atributos de un coche existente.**  
+✔️ **Muestra las opciones disponibles para el usuario.**  
+✔️ **El usuario selecciona una opción que se procesa en el `switch`.**  
 
 ---
 
-## 📌 **¿Cómo se maneja el `Scanner`?**
-✔️ **`Scanner` se usa para capturar la entrada del usuario.**  
-✔️ **Se cierra con `sc.close();` al finalizar el programa.**
-
+### **🔹 `mostrarCoches()`**
 ```java
-Scanner sc = new Scanner(System.in);
-sc.close();
+public static void mostrarCoches() {
+    for (int i = 0; i < CocheFactory.getCoches().size(); i++) {
+        System.out.println("=========================================");
+        System.out.println("🚗 Coche " + (i + 1) + ":");
+        System.out.println("-----------------------------------------");
+        System.out.println(
+            "       _______\n" +
+            "      //  ||\\ \\\n" +
+            " ____//___||_\\ \\___\n" +
+            " )  _          _    \\\n" +
+            " |_/ \\________/ \\___|\n" +
+            "___\\_/________\\_/______"
+        );
+        System.out.println("-----------------------------------------");
+        System.out.println("Bastidor: " + CocheFactory.getCoches().get(i).getBastidor());
+        System.out.println("Motor: " + CocheFactory.getCoches().get(i).getMotor() + " cc");
+        System.out.println("Peso: " + CocheFactory.getCoches().get(i).getPeso() + " kg");
+        System.out.println("Largo: " + CocheFactory.getCoches().get(i).getLargo() + " cm");
+        System.out.println("Ancho: " + CocheFactory.getCoches().get(i).getAncho() + " cm");
+        System.out.println("Marca: " + CocheFactory.getCoches().get(i).getMarca());
+        System.out.println("=========================================\n");
+    }
+}
 ```
+✔️ **Recorre la lista de coches y muestra la información de cada uno.**  
+✔️ **Incluye un dibujo en ASCII para hacerlo más visual.**  
 
-📌 **Cerrar `Scanner` evita fugas de memoria en el programa.**
+---
+
+## 🚀 **¿Por qué `Main.java` ya no maneja la lista de coches?**
+📌 **Antes:**  
+- `Main.java` tenía que gestionar la lista de coches manualmente.  
+- `Main.java` tenía código repetitivo al crear coches.  
+
+📌 **Ahora:**  
+✔️ **La gestión de coches se delega a `CocheFactory`.**  
+✔️ **El código de `Main.java` es más limpio y modular.**  
+✔️ **`mostrarCoches()` está separado para mejorar la organización.**  
+
+🔍 **Ver más sobre `CocheFactory.java`:**  
+[📂 Explicación de `CocheFactory.java`](https://github.com/carmonalanzasalvaro/DisenoSoftware/blob/main/Introduccionjava/Programa3_ClasesYObjetos/Explicaciones/CocheFactory/README.md)
 
 ---
 

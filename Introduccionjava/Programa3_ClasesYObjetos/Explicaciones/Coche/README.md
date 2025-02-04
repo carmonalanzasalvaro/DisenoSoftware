@@ -1,79 +1,77 @@
 # 🚗 Explicación: `Coche.java`
 
-## 📜 ¿Qué es `Coche.java`?
+## 📜 **¿Qué es `Coche.java`?**
 `Coche` es una subclase de `Vehiculo` que representa un tipo específico de vehículo.  
-A diferencia de `Vehiculo`, esta clase solicita **datos adicionales al usuario** y permite gestionar características como **motor, peso, dimensiones y marca**.
+Esta clase define atributos y métodos específicos para coches, como la marca.  
+
+✔️ **Hereda de `Vehiculo`** para reutilizar atributos y métodos.  
+✔️ **Agrega el atributo `marca`** para almacenar información adicional.  
+✔️ **Incluye métodos `getMarca()` y `setMarca()`** para acceder y modificar la marca.  
 
 ---
 
-## 📌 **¿Por qué `Coche` extiende `Vehiculo`?**
-✔️ **Aprovecha los atributos y métodos de `Vehiculo`** sin tener que repetir código.  
-✔️ **Puede acceder a atributos `protected`** de `Vehiculo`, como `motor`, `peso`, etc.  
-✔️ **Asegura que `Coche` tenga un bastidor único**, gracias a la validación en `Vehiculo`.
-
+## 📌 **Clase `Coche` (Implementación)**
 ```java
 public class Coche extends Vehiculo {
     private String marca;
+
     public Coche(int bastidor) {
         super(bastidor);
-        System.out.println("Creando coche con bastidor: " + bastidor);
+    }
+
+    @Override
+    public String getTipoVehiculo() {
+        return "Turismo";
+    }
+
+    public String getMarca() { return marca; }
+    public void setMarca(String marca) { this.marca = marca; }
+}
 ```
-📌 **`super(bastidor);` llama al constructor de `Vehiculo`, que valida que el bastidor no esté repetido.**
 
 ---
 
-## 📌 **¿Por qué `super(bastidor);` es obligatorio?**
-Cuando una subclase **hereda de una superclase con un constructor parametrizado (`Vehiculo(int bastidor)`)**,  
-el constructor de la subclase **debe llamar a `super(parametros)` explícitamente**.
-
-✔️ Sin `super(bastidor);`, **el código no compilaría** porque `Vehiculo` no tiene un constructor vacío.
-
----
-
-## 📌 **¿Cómo `Coche` solicita datos adicionales al usuario?**
-✔️ Usa `Scanner` para permitir la entrada de datos en tiempo de ejecución.  
-✔️ Captura **cubicaje del motor, peso, largo, ancho y marca**.
-
+## 📌 **Explicación de los Métodos**
+### **🔹 `Coche(int bastidor)`**
 ```java
-Scanner sc = new Scanner(System.in);
-System.out.println("Introduce cubicaje del motor: ");
-int motor = sc.nextInt();
-setMotor(motor);
+public Coche(int bastidor) {
+    super(bastidor);
+}
 ```
-
-📌 **Después de `nextInt()`, se usa `sc.nextLine();` para limpiar el buffer y evitar errores.**  
-Sin esto, `sc.nextLine();` en `marca = sc.nextLine();` podría ser ignorado.
-
-```java
-System.out.println("Introduce la marca del coche: ");
-sc.nextLine();
-marca = sc.nextLine();
-```
+✔️ **Llama al constructor de `Vehiculo` usando `super(bastidor)`.**  
+✔️ **Verifica que el número de bastidor no esté repetido en `Vehiculo`.**  
 
 ---
 
-## 📌 **¿Por qué `Coche` implementa `getTipoVehiculo()`?**
-`Vehiculo` define este método como **abstracto**, por lo que **todas sus subclases deben implementarlo**.
-
+### **🔹 `getTipoVehiculo()`**
 ```java
 @Override
 public String getTipoVehiculo() {
     return "Turismo";
 }
 ```
-✔️ **Cada tipo de vehículo (`Coche`, `Moto`, `Camion`) puede definir su propio tipo.**  
-✔️ En este caso, `Coche` devuelve `"Turismo"` en `getTipoVehiculo()`.
+✔️ **Obliga a `Coche` a definir el tipo de vehículo.**  
+✔️ **El método es obligatorio porque `Vehiculo` es abstracto.**  
 
 ---
 
-## 📌 **¿Por qué `getters` y `setters` para `marca`?**
-✔️ **Encapsulación:** `marca` es `private`, por lo que solo se puede acceder/modificar con métodos.  
-✔️ **Permite modificar la marca después de crear el objeto.**
-
+### **🔹 `getMarca()` y `setMarca()`**
 ```java
 public String getMarca() { return marca; }
 public void setMarca(String marca) { this.marca = marca; }
 ```
+✔️ **`getMarca()` devuelve la marca actual del coche.**  
+✔️ **`setMarca()` permite modificar la marca del coche.**  
+
+---
+
+## 🚀 **¿Por qué `Coche` no maneja la creación de coches?**
+📌 **La creación de coches se gestiona en `CocheFactory`.**  
+Antes, `Coche` manejaba la entrada del usuario, lo que rompía el **principio de cohesión**.  
+Ahora, `Coche` solo **define atributos y métodos**, dejando la creación a `CocheFactory`.
+
+🔍 **Ver más sobre `CocheFactory`:**  
+[📂 Explicación de `CocheFactory.java`](https://github.com/carmonalanzasalvaro/DisenoSoftware/blob/main/Introduccionjava/Programa3_ClasesYObjetos/Explicaciones/CocheFactory/README.md)
 
 ---
 

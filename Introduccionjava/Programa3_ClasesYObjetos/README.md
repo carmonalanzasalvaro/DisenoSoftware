@@ -14,8 +14,8 @@ El programa permite gestionar una lista de coches con los siguientes atributos:
 Los coches se gestionan mediante un **menú interactivo** donde se pueden:
 
 1️⃣ **Crear coches.**  
-2️⃣ **Modificar datos de un coche según su bastidor.**  
-3️⃣ **Mostrar todos los coches registrados.**  
+2️⃣ **Modificar datos de un coche según su bastidor.** *(No implementado)*  
+3️⃣ **Mostrar todos los coches registrados con un dibujo ASCII.**  
 4️⃣ **Salir.**  
 
 🔍 [📂 Explicación Detallada](https://github.com/carmonalanzasalvaro/DisenoSoftware/blob/main/Introduccionjava/Programa3_ClasesYObjetos/Explicaciones/Descripcion_Proyecto/README.md)
@@ -48,51 +48,20 @@ public abstract class Vehiculo {
     public int getMotor() { return motor; }
     public void setMotor(int motor) { this.motor = motor; }
 }
-
 ```
 🔍 [📂 Explicación Detallada](https://github.com/carmonalanzasalvaro/DisenoSoftware/blob/main/Introduccionjava/Programa3_ClasesYObjetos/Explicaciones/Vehiculo/README.md)
-
-### **🛠️ Características:**
-✔️ `abstract` impide crear instancias de `Vehiculo` directamente.  
-✔️ `final` en `bastidor` evita modificaciones.  
-✔️ `static List<Integer> bastidoresUsados` asegura que no haya números de bastidor repetidos.  
-✔️ `getTipoVehiculo()` es **abstracto** para obligar a subclases a definirlo.  
 
 ---
 
 ## 🔹 **3. `Coche.java` (Subclase de `Vehiculo`)**
 `Coche` extiende `Vehiculo` y agrega atributos propios como `marca`.  
-Además, permite capturar información adicional del usuario: **motor, peso, largo, ancho y marca**.
 
 ```java
 public class Coche extends Vehiculo {
-    Scanner sc = new Scanner(System.in);
     private String marca;
-    
+
     public Coche(int bastidor) {
         super(bastidor);
-        System.out.println("Creando coche con bastidor: " + bastidor);
-
-        System.out.println("Introduce cubicaje del motor: ");
-        int motor = sc.nextInt();
-        setMotor(motor);
-
-        System.out.println("Introduce peso del coche: ");
-        int peso = sc.nextInt();
-        setPeso(peso);
-
-        System.out.println("Introduce largo del coche: ");
-        int largo = sc.nextInt();
-        setLargo(largo);
-
-        System.out.println("Introduce ancho del coche: ");
-        int ancho = sc.nextInt();
-        setAncho(ancho);
-
-        System.out.println("Introduce la marca del coche: ");
-        sc.nextLine();
-        marca = sc.nextLine();
-        sc.close();
     }
 
     @Override
@@ -107,22 +76,63 @@ public class Coche extends Vehiculo {
 
 🔍 [📂 Explicación Detallada](https://github.com/carmonalanzasalvaro/DisenoSoftware/blob/main/Introduccionjava/Programa3_ClasesYObjetos/Explicaciones/Coche/README.md)
 
+---
 
-### **🛠️ Características:**
-✔️ Llama a `super(bastidor);` para inicializar la superclase `Vehiculo`.  
-✔️ Implementa `getTipoVehiculo()` obligatorio por ser `abstract`.  
-✔️ Usa `Scanner` para capturar la marca del coche al crearlo.  
+## 🔹 **4. `CocheFactory.java` (Clase de Creación de Coches)**
+`CocheFactory` es una clase que maneja la lista de coches y su creación con entrada del usuario.
+
+```java
+public class CocheFactory {
+    private static final List<Coche> coches = new ArrayList<>();
+
+    public static void crearCocheUsuario() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Introduce el bastidor del coche: ");
+        int bastidor = sc.nextInt();
+        Coche coche = new Coche(bastidor);
+
+        System.out.println("Introduce cubicaje del motor: ");
+        int motor = sc.nextInt();
+        coche.setMotor(motor);
+
+        System.out.println("Introduce peso del coche (kg): ");
+        int peso = sc.nextInt();
+        coche.setPeso(peso);
+
+        System.out.println("Introduce largo del coche (cm): ");
+        int largo = sc.nextInt();
+        coche.setLargo(largo);
+
+        System.out.println("Introduce ancho del coche (cm): ");
+        int ancho = sc.nextInt();
+        coche.setAncho(ancho);
+
+        System.out.println("Introduce la marca del coche: ");
+        sc.nextLine();
+        String marca = sc.nextLine();
+        coche.setMarca(marca);
+
+        coches.add(coche);
+    }
+
+    public static List<Coche> getCoches() {
+        return coches;
+    }
+}
+```
+
+🔍 [📂 Explicación Detallada](https://github.com/carmonalanzasalvaro/DisenoSoftware/blob/main/Introduccionjava/Programa3_ClasesYObjetos/Explicaciones/CocheFactory/README.md)
 
 ---
 
-## 🔹 **4. `Main.java` (Menú de Gestión de Coches)**
+## 🔹 **5. `Main.java` (Menú de Gestión de Coches)**
 Este archivo gestiona la **interacción con el usuario** y permite administrar los coches mediante un **menú interactivo**.
 
 ```java
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        List<Coche> coches = new ArrayList<>();
         int option = 0;
 
         while (option != 4) {
@@ -130,18 +140,13 @@ public class Main {
             option = sc.nextInt();
             switch (option) {
                 case 1:
-                    System.out.print("Introduce el bastidor: ");
-                    int bastidor = sc.nextInt();
-                    coches.add(new Coche(bastidor));
+                    CocheFactory.crearCocheUsuario();
                     break;
-                case 2: // ⚠️ NO IMPLEMENTADO
+                case 2:
                     System.out.println("⚠️ Función de modificar datos en desarrollo...");
                     break;
                 case 3:
-                    for (int i = 0; i < coches.size(); i++) {
-                        System.out.println("Bastidor: " + coches.get(i).getBastidor());
-                        System.out.println("Marca: " + coches.get(i).getMarca());
-                    }
+                    mostrarCoches();
                     break;
                 case 4:
                     System.out.println("Saliendo del programa...");
@@ -151,28 +156,33 @@ public class Main {
         sc.close();
     }
 
-    public static void menu() {
-        System.out.println("1. Crear coche");
-        System.out.println("2. Modificar datos");
-        System.out.println("3. Mostrar coches");
-        System.out.println("4. Salir");
+    public static void mostrarCoches() {
+        for (int i = 0; i < CocheFactory.getCoches().size(); i++) {
+            System.out.println("=========================================");
+            System.out.println("🚗 Coche " + (i + 1) + ":");
+            System.out.println("-----------------------------------------");
+            System.out.println(
+                "       _______\n" +
+                "      //  ||\\ \\\n" +
+                " ____//___||_\\ \\___\n" +
+                " )  _          _    \\\n" +
+                " |_/ \\________/ \\___|\n" +
+                "___\\_/________\\_/______"
+            );
+            System.out.println("-----------------------------------------");
+            System.out.println("Bastidor: " + CocheFactory.getCoches().get(i).getBastidor());
+            System.out.println("Motor: " + CocheFactory.getCoches().get(i).getMotor() + " cc");
+            System.out.println("Peso: " + CocheFactory.getCoches().get(i).getPeso() + " kg");
+            System.out.println("Largo: " + CocheFactory.getCoches().get(i).getLargo() + " cm");
+            System.out.println("Ancho: " + CocheFactory.getCoches().get(i).getAncho() + " cm");
+            System.out.println("Marca: " + CocheFactory.getCoches().get(i).getMarca());
+            System.out.println("=========================================\n");
+        }
     }
 }
 ```
+
 🔍 [📂 Explicación Detallada](https://github.com/carmonalanzasalvaro/DisenoSoftware/blob/main/Introduccionjava/Programa3_ClasesYObjetos/Explicaciones/Main/README.md)
 
-### **🛠️ Características:**
-✔️ Usa `Scanner` para capturar entradas del usuario.  
-✔️ **Menú interactivo** con opciones de crear, modificar y mostrar coches.  
-✔️ Almacena coches en una `List<Coche>`.  
-✔️ **Evita bastidores duplicados** gracias a `Vehiculo.bastidoresUsados`.  
-
 ---
-
-## ✅ **Objetivos**
-✔️ **Uso correcto de POO:** Aplicación de **herencia, clases abstractas y encapsulación**.  
-✔️ **Evitar errores lógicos:** Cada coche tiene un bastidor único y datos validados.  
-✔️ **Menú interactivo:** Permite gestionar coches de forma dinámica.  
-✔️ **Fácil escalabilidad:** Se pueden añadir otras clases como `Moto`, `Camion`, etc.  
-
 

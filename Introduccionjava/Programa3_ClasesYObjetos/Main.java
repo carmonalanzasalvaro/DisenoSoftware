@@ -1,7 +1,6 @@
 package Introduccionjava.Programa3_ClasesYObjetos;
 
-import java.util.ArrayList;
-import java.util.List;
+
 import java.util.Scanner;
 
 
@@ -9,8 +8,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
-        List<Coche> coches = new ArrayList<>();        
+        Scanner sc = new Scanner(System.in);       
         // menu para crear coche, modificar datos en función del bastidor, mostrar datos de todos los coches, salir.
         int option=0;
         while (option!=4) {
@@ -19,36 +17,29 @@ public class Main {
             
             switch (option) {
                 case 1: //Crear coche
-                   
-                    System.out.println("Introduce el bastidor del coche: ");
-                    int bastidor = sc.nextInt();
-                    Coche coche = new Coche(bastidor);
-                    coches.add(coche);
+
+                    CocheFactory.crearCocheUsuario();
 
                     break;
                 case 2: //Modificar datos
+
                     System.out.println("Función no implementada");
+                    
                     break;
                 case 3: //Mostrar datos de todos los coches
-                    System.out.println("Mostrando datos de todos los coches...");
 
-                    for(int i=0; i<coches.size(); i++) {
-
-                        System.out.println("Bastidor: " + coches.get(i).getBastidor());
-                        System.out.println("\n");
-                        System.out.println("Motor: " + coches.get(i).getMotor());
-                        System.out.println("Peso: " + coches.get(i).getPeso());
-                        System.out.println("Largo: " + coches.get(i).getLargo());
-                        System.out.println("Ancho: " + coches.get(i).getAncho());
-                        System.out.println("Marca: " + coches.get(i).getMarca());
-                        System.out.println("\n\n");
-                    }
+                    mostrarCoches();
 
                     break;
-                case 4:
+                case 4: //Salir
+                   
                     System.out.println("Saliendo del programa...");
+                   
                     break;
                 default:
+
+                    System.out.println("Opción no válida");
+                
                     break;
             }
         }
@@ -60,6 +51,34 @@ public class Main {
         System.out.println("2. Modificar datos");
         System.out.println("3. Mostrar datos de todos los coches");
         System.out.println("4. Salir");
+    }
+
+    public static void mostrarCoches(){
+        System.out.println("Mostrando datos de todos los coches...\n");
+
+        for (int i = 0; i < CocheFactory.getCoches().size(); i++) {
+            System.out.println("=========================================");
+            System.out.println("Coche " + (i + 1) + ":");
+            System.out.println("-----------------------------------------");
+            System.out.println(
+                "       _______\n" +
+                "      //  ||\\ \\\n" +
+                " ____//___||_\\ \\___\n" +
+                " )  _          _    \\\n" +
+                " |_/ \\________/ \\___|\n" +
+                "___\\_/________\\_/______"
+            );
+            System.out.println("-----------------------------------------");
+            System.out.println("Bastidor: " + CocheFactory.getCoches().get(i).getBastidor());
+            System.out.println("Motor: " + CocheFactory.getCoches().get(i).getMotor() + " cc");
+            System.out.println("Peso: " + CocheFactory.getCoches().get(i).getPeso() + " kg");
+            System.out.println("Largo: " + CocheFactory.getCoches().get(i).getLargo() + " cm");
+            System.out.println("Ancho: " + CocheFactory.getCoches().get(i).getAncho() + " cm");
+            System.out.println("Marca: " + CocheFactory.getCoches().get(i).getMarca());
+            System.out.println("=========================================\n");
+            System.out.println("\n\n");
+        }
+
     }
 }
 
