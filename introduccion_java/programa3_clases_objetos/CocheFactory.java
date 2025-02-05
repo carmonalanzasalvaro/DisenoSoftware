@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+@SuppressWarnings("resource") // Para evitar el warning de "Resource leak: 'sc' is never closed"
+
 public class CocheFactory {
 
     private static final List<Coche> coches = new ArrayList<>();
