@@ -130,9 +130,9 @@ public static void mostrarCoches() {
 ✔️ **`mostrarCoches()` está separado para mejorar la organización.**  
 
 🔍 **Ver más sobre `CocheFactory.java`:**  
-[📂 Explicación de `CocheFactory.java`](https://github.com/carmonalanzasalvaro/DisenoSoftware/blob/main/Introduccionjava/Programa3_ClasesYObjetos/Explicaciones/CocheFactory/README.md)
+[📂 Explicación de `CocheFactory.java`](https://github.com/carmonalanzasalvaro/DisenoSoftware/blob/main/introduccion_java/programa3_clases_objetos/Explicaciones/CocheFactory/README.md)
 
 ---
 
 🔗 **Volver al README principal:**  
-[🔙 Ir al README principal](https://github.com/carmonalanzasalvaro/DisenoSoftware/blob/main/Introduccionjava/Programa3_ClasesYObjetos/README.md)
+[🔙 Ir al README principal](https://github.com/carmonalanzasalvaro/DisenoSoftware/blob/main/introduccion_java/programa3_clases_objetos/README.md)

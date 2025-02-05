@@ -75,4 +75,4 @@ public String getTipoVehiculo() {
 ---
 
 🔗 **Volver al README principal:**  
-[🔙 Ir al README principal](https://github.com/carmonalanzasalvaro/DisenoSoftware/blob/main/Introduccionjava/Programa3_ClasesYObjetos/README.md)
+[🔙 Ir al README principal](https://github.com/carmonalanzasalvaro/DisenoSoftware/blob/main/introduccion_java/programa3_clases_objetos/README.md)

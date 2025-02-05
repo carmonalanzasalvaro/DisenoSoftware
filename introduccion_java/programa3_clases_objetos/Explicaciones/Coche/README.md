@@ -71,9 +71,9 @@ Antes, `Coche` manejaba la entrada del usuario, lo que rompía el **principio de
 Ahora, `Coche` solo **define atributos y métodos**, dejando la creación a `CocheFactory`.
 
 🔍 **Ver más sobre `CocheFactory`:**  
-[📂 Explicación de `CocheFactory.java`](https://github.com/carmonalanzasalvaro/DisenoSoftware/blob/main/Introduccionjava/Programa3_ClasesYObjetos/Explicaciones/CocheFactory/README.md)
+[📂 Explicación de `CocheFactory.java`](https://github.com/carmonalanzasalvaro/DisenoSoftware/blob/main/introduccionjava/programa3_clases_objetos/Explicaciones/CocheFactory/README.md)
 
 ---
 
 🔗 **Volver al README principal:**  
-[🔙 Ir al README principal](https://github.com/carmonalanzasalvaro/DisenoSoftware/blob/main/Introduccionjava/Programa3_ClasesYObjetos/README.md)
+[🔙 Ir al README principal](https://github.com/carmonalanzasalvaro/DisenoSoftware/blob/main/introduccionjava/programa3_clases_objetos/README.md)

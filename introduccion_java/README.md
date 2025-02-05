@@ -1,8 +1,8 @@
 # Programación en Java 🚀
 
-[📂 String](https://github.com/carmonalanzasalvaro/DisenoSoftware/tree/main/Introduccionjava/Programa1_String)
-[📂 Entrada y Salida de datos](https://github.com/carmonalanzasalvaro/DisenoSoftware/tree/main/Introduccionjava/Programa2_EntradaYSalidaDatos)
-[📂 Programa que reune los conceptos vistos aquí abajo](https://github.com/carmonalanzasalvaro/DisenoSoftware/tree/main/Introduccionjava/Programa3_ClasesYObjetos)
+[📂 String](https://github.com/carmonalanzasalvaro/DisenoSoftware/tree/main/introduccion_java/programa1_string)
+[📂 Entrada y Salida de datos](https://github.com/carmonalanzasalvaro/DisenoSoftware/tree/main/introduccion_java/programa2_entrada_salida_datos)
+[📂 Programa que reune los conceptos vistos aquí abajo](https://github.com/carmonalanzasalvaro/DisenoSoftware/tree/main/introduccion_java/programa3_clases_objetos)
 
 ---
 # Conceptos fundamentales de Java y POO #
