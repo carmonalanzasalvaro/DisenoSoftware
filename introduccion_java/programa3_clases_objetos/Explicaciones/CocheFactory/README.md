@@ -92,9 +92,9 @@ public static List<Coche> getCoches() {
 ✔️ **`Main.java` solo gestiona la interfaz del usuario.**  
 
 🔍 **Ver más sobre `Coche.java`:**  
-[📂 Explicación de `Coche.java`](https://github.com/carmonalanzasalvaro/DisenoSoftware/blob/main/introduciconjava/programa3_clases_objetos/Explicaciones/Coche/README.md)
+[📂 Explicación de `Coche.java`](https://github.com/carmonalanzasalvaro/DisenoSoftware/blob/main/introducicon_java/programa3_clases_objetos/Explicaciones/Coche/README.md)
 
 ---
 
 🔗 **Volver al README principal:**  
-[🔙 Ir al README principal](https://github.com/carmonalanzasalvaro/DisenoSoftware/blob/main/introduciconjava/programa3_clases_objetos/README.md)
+[🔙 Ir al README principal](https://github.com/carmonalanzasalvaro/DisenoSoftware/blob/main/introducicon_java/programa3_clases_objetos/README.md)
