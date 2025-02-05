@@ -1,16 +1,21 @@
 package Clase.sesion2;
 
-public class Wind extends Instrument {
-    // Implementación del método abstracto play()
+// Wind.java
+public class Wind implements Instrument, ElectricSound {
     @Override
     public void play(Note n) {
         System.out.println("Wind.play() " + n);
     }
 
-    // Sobrescritura del método what()
     @Override
     public String what() {
         return "Wind";
     }
+
+    @Override
+    public void electricPlay(Note n) {
+        System.out.println("Wind ElectricSound: " + n + " eléctrico");
+    }
 }
+
 
