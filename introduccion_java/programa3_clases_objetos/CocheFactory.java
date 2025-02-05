@@ -45,6 +45,7 @@ public class CocheFactory {
 
         Coche coche = new Coche(bastidor, motor, peso, largo, ancho, marca);
         coches.add(coche);
+        
     }
 
 
