@@ -1,4 +1,4 @@
-package Clase.sesion2;
+package Clase.sesion2.ejemplo_instrumentos;
 
 
 // Instrument.java
