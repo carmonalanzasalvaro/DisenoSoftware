@@ -18,7 +18,7 @@ Los coches se gestionan mediante un **menú interactivo** donde se pueden:
 3️⃣ **Mostrar todos los coches registrados con un dibujo ASCII.**  
 4️⃣ **Salir.**  
 
-🔍 [📂 Explicación Detallada](https://github.com/carmonalanzasalvaro/DisenoSoftware/blob/main/Introduccionjava/programa3_clases_objetos/Explicaciones/Descripcion_Proyecto/README.md)
+🔍 [📂 Explicación Detallada](https://github.com/carmonalanzasalvaro/DisenoSoftware/blob/main/introduccion_java/programa3_clases_objetos/Explicaciones/Descripcion_Proyecto/README.md)
 
 ---
 
@@ -49,7 +49,7 @@ public abstract class Vehiculo {
     public void setMotor(int motor) { this.motor = motor; }
 }
 ```
-🔍 [📂 Explicación Detallada](https://github.com/carmonalanzasalvaro/DisenoSoftware/blob/main/Introduccionjava/programa3_clases_objetos/Explicaciones/Vehiculo/README.md)
+🔍 [📂 Explicación Detallada](https://github.com/carmonalanzasalvaro/DisenoSoftware/blob/main/introduccion_java/programa3_clases_objetos/Explicaciones/Vehiculo/README.md)
 
 ---
 
@@ -74,7 +74,7 @@ public class Coche extends Vehiculo {
 }
 ```
 
-🔍 [📂 Explicación Detallada](https://github.com/carmonalanzasalvaro/DisenoSoftware/blob/main/Introduccionjava/programa3_clases_objetos/Explicaciones/Coche/README.md)
+🔍 [📂 Explicación Detallada](https://github.com/carmonalanzasalvaro/DisenoSoftware/blob/main/introduccion_java/programa3_clases_objetos/Explicaciones/Coche/README.md)
 
 ---
 
@@ -122,7 +122,7 @@ public class CocheFactory {
 }
 ```
 
-🔍 [📂 Explicación Detallada](https://github.com/carmonalanzasalvaro/DisenoSoftware/blob/main/Introduccionjava/programa3_clases_objetos/Explicaciones/CocheFactory/README.md)
+🔍 [📂 Explicación Detallada](https://github.com/carmonalanzasalvaro/DisenoSoftware/blob/main/introduccion_java/programa3_clases_objetos/Explicaciones/CocheFactory/README.md)
 
 ---
 
@@ -182,7 +182,7 @@ public class Main {
 }
 ```
 
-🔍 [📂 Explicación Detallada](https://github.com/carmonalanzasalvaro/DisenoSoftware/blob/main/Introduccionjava/programa3_clases_objetos/Explicaciones/Main/README.md)
+🔍 [📂 Explicación Detallada](https://github.com/carmonalanzasalvaro/DisenoSoftware/blob/main/introduccion_java/programa3_clases_objetos/Explicaciones/Main/README.md)
 
 ---
 
