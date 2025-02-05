@@ -1,16 +1,30 @@
-# Proyecto: Sistema de Herencia para un Coche Eléctrico
+# Proyecto: Modelado de Coches y Motores en Java
 
-Este proyecto implementa una estructura de clases en Java para modelar un coche eléctrico utilizando herencia y encapsulación.
+Este proyecto tiene como objetivo ilustrar conceptos fundamentales de programación orientada a objetos en Java, como la encapsulación, la herencia y la composición, mediante la simulación de coches y sus motores.
 
-## Archivos y Explicación
+## Estructura del Proyecto
 
-### 1. `Engine.java`
+El proyecto está compuesto por las siguientes clases:
+
+1. `Engine`: Representa un motor genérico.
+2. `Car`: Representa un coche genérico que utiliza un motor.
+3. `HerencyElectricCar`: Representa un coche eléctrico que hereda de `Car`.
+
+A continuación, se detallan cada una de estas clases.
+
+### 1. Clase `Engine`
+
+**Ubicación:** `Clase/sesion2/coche_herencia/Engine.java`
 
 **Descripción:**
-Esta clase representa un motor, con un atributo `tipo` y métodos para acceder y modificar su valor. Además, cuenta con un método `encender()` para simular el encendido del motor.
 
-**Código relevante:**
+La clase `Engine` modela un motor con un atributo `tipo` que indica el tipo de motor (por ejemplo, "Eléctrico", "Gasolina"). Incluye métodos para obtener y establecer el tipo de motor, así como un método para simular el encendido del motor.
+
+**Código:**
+
 ```java
+package Clase.sesion2.coche_herencia;
+
 public class Engine {
     String tipo;
 
@@ -33,22 +47,29 @@ public class Engine {
 ```
 
 **Explicación:**
-- Se usa encapsulación para manejar el tipo de motor.
-- Se define un constructor para inicializar el tipo de motor.
-- Se proporciona un método para encender el motor.
 
-**Razón del diseño:**
-Se separa el motor en su propia clase para favorecer la reutilización y modularidad, permitiendo que diferentes coches usen distintos motores sin duplicar código.
+- **Atributo `tipo`:** Almacena el tipo de motor como una cadena de texto.
+- **Constructor:** Inicializa el motor con un tipo específico.
+- **Métodos `getTipo` y `setTipo`:** Permiten acceder y modificar el tipo de motor.
+- **Método `encender`:** Simula el encendido del motor imprimiendo un mensaje en la consola.
 
----
+**Razonamiento de Diseño:**
 
-### 2. `Car.java`
+La clase `Engine` está diseñada para ser reutilizable y flexible, permitiendo la creación de diferentes tipos de motores sin necesidad de modificar la clase `Car`. Esto sigue el principio de composición, donde un coche tiene un motor, en lugar de heredar de él.
+
+### 2. Clase `Car`
+
+**Ubicación:** `Clase/sesion2/coche_herencia/Car.java`
 
 **Descripción:**
-Esta clase representa un coche genérico, con atributos para la marca, modelo, color y un motor. También incluye métodos para encender, avanzar y frenar.
 
-**Código relevante:**
+La clase `Car` modela un coche genérico con atributos como `marca`, `modelo`, `color` y un objeto `Engine`. Incluye métodos para encender el coche, avanzar y detenerse.
+
+**Código:**
+
 ```java
+package Clase.sesion2.coche_herencia;
+
 public class Car {
     private String marca;
     private String modelo;
@@ -62,51 +83,39 @@ public class Car {
         this.engine = engine;
     }
 
-    public void avanzar() {
-        System.out.println("Coche avanzando");
-    }
-    public void parar() {
-        System.out.println("Coche frenando");
-    }
     public void encender() {
         engine.encender();
     }
-}
-```
 
-**Explicación:**
-- Se encapsulan los atributos con métodos `getter` y `setter`.
-- Se asocia un `Engine` con el coche, promoviendo la composición en lugar de herencia para el motor.
-- Métodos `avanzar()`, `parar()` y `encender()` definen el comportamiento básico del coche.
-
-**Razón del diseño:**
-Se utiliza la composición para que el coche tenga un motor, en lugar de heredar sus funcionalidades, facilitando la escalabilidad.
-
----
-
-### 3. `ElectricCar.java`
-
-**Descripción:**
-Esta clase representa un coche eléctrico, pero actualmente está vacía.
-
-```java
-public class ElectricCar {
+    public void avanzar() {
+        System.out.println("Coche avanzando");
+    }
     
+    public void parar() {
+        System.out.println("Coche frenando");
+    }
 }
 ```
 
 **Explicación:**
-Es probable que esta clase deba extender `Car` y modificar ciertos comportamientos, pero aún no está implementada.
 
----
+- **Encapsulación:** Se utilizan modificadores de acceso `private` para los atributos, protegiendo los datos y proporcionando métodos para su manipulación.
+- **Composición:** `Car` tiene un objeto `Engine`, lo que permite cambiar el motor sin afectar la estructura del coche.
+- **Métodos:** Se incluyen funcionalidades esenciales como `encender()`, `avanzar()` y `parar()`.
 
-### 4. `HerencyElectricCar.java`
+### 3. Clase `HerencyElectricCar`
+
+**Ubicación:** `Clase/sesion2/coche_herencia/HerencyElectricCar.java`
 
 **Descripción:**
-Extiende `Car` para representar un coche eléctrico con herencia. En su `main()`, instancia un motor eléctrico y un coche eléctrico, probando sus métodos.
 
-**Código relevante:**
+Esta clase extiende `Car` para representar un coche eléctrico. Utiliza la herencia para reutilizar funcionalidades y modificar el comportamiento según sea necesario.
+
+**Código:**
+
 ```java
+package Clase.sesion2.coche_herencia;
+
 public class HerencyElectricCar extends Car {
 
     public HerencyElectricCar(String marca, String modelo, String color, Engine engine) {
@@ -124,14 +133,11 @@ public class HerencyElectricCar extends Car {
 ```
 
 **Explicación:**
-- Se extiende `Car` para aprovechar su funcionalidad.
-- Se utiliza un `Engine` de tipo "Electric".
-- Se prueba la funcionalidad con un `main()`.
 
-**Razón del diseño:**
-Se usa herencia para especializar la clase `Car`, representando un coche eléctrico con el mismo comportamiento básico.
-
----
+- **Herencia:** `HerencyElectricCar` hereda de `Car`, aprovechando su estructura base.
+- **Comportamiento:** Se prueba en el método `main()` creando un coche eléctrico y utilizando sus métodos.
 
 ## Conclusión
-Este proyecto ilustra la composición (`Car` tiene un `Engine`) y herencia (`HerencyElectricCar` extiende `Car`). Esta estructura modular facilita la escalabilidad y el mantenimiento del código.
+
+Este proyecto demuestra la importancia de la encapsulación, la composición y la herencia en la programación orientada a objetos. Con esta estructura modular, es fácil extender el código para incluir nuevos tipos de coches sin modificar el código existente.
+
