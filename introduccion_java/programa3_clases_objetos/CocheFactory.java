@@ -1,4 +1,4 @@
-package Introduccionjava.Programa3_ClasesYObjetos;
+package introduccion_java.programa3_clases_objetos;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,7 @@ public class CocheFactory {
 
     private static final List<Coche> coches = new ArrayList<>();
     
-    public static void crearCocheUsuario() {
+    public static void crearCoche() {
         Scanner sc = new Scanner(System.in); //sc.close() en main
 
         System.out.println("Introduce el bastidor del coche: ");
@@ -39,6 +39,14 @@ public class CocheFactory {
         coches.add(coche);
         
     }
+    
+    //Método sobrecargado por si necesito crear un coche con los atributos ya definidos.
+    public static void crearCoche(int bastidor, int motor, int peso, int largo, int ancho, String marca) {
+
+        Coche coche = new Coche(bastidor, motor, peso, largo, ancho, marca);
+        coches.add(coche);
+    }
+
 
     public static List<Coche> getCoches() {
         return coches;

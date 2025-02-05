@@ -1,4 +1,4 @@
-package Introduccionjava.Programa3_ClasesYObjetos;
+package introduccion_java.programa3_clases_objetos;
 
 
 import java.util.Scanner;
@@ -18,7 +18,7 @@ public class Main {
             switch (option) {
                 case 1: //Crear coche
 
-                    CocheFactory.crearCocheUsuario();
+                    CocheFactory.crearCoche();
 
                     break;
                 case 2: //Modificar datos

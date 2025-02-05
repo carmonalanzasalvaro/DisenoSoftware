@@ -1,4 +1,4 @@
-package Introduccionjava.Programa1_String;
+package introduccion_java.programa1_string;
 
 public class Main {
     public static void main(String[] args) {
@@ -48,7 +48,11 @@ public class Main {
         String[] subcadenas = cadenaDividir.split(" ");
         System.out.println("Subcadenas:");
         for (String subcadena : subcadenas) {
-            System.out.println("- " + subcadena);
+
+            if (!subcadena.isEmpty()){//Para evitar que se muestren cadenas vacías en caso de que haya más de un espacio seguido.
+                System.out.println("- " + subcadena); 
+            }
+            
         }
         System.out.println("---------------------------");
 
@@ -63,7 +67,7 @@ public class Main {
         double numeroDecimal = 3.14;
         boolean valorBooleano = true;
 
-        System.out.println("Número entero convertido a String: " + String.valueOf(numero));
+        System.out.println("Número entero convertido a String: " + String.valueOf(numero)); //No es necesario hacer uso de String, ya que numero es un valor primitivo y Syso lo castea automaticamente.
         System.out.println("Número decimal convertido a String: " + String.valueOf(numeroDecimal));
         System.out.println("Booleano convertido a String: " + String.valueOf(valorBooleano));
     

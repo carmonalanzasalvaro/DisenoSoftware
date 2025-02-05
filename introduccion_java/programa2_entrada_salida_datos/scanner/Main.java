@@ -1,4 +1,4 @@
-package Introduccionjava.Programa2_EntradaYSalidaDatos.Scanner;
+package introduccion_java.programa2_entrada_salida_datos.scanner;
 
 import java.util.Scanner;
 

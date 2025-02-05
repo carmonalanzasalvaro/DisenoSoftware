@@ -1,4 +1,4 @@
-package Introduccionjava.Programa2_EntradaYSalidaDatos.JOptionPane;
+package introduccion_java.programa2_entrada_salida_datos.joptionpane;
 
 import javax.swing.JOptionPane;
 
