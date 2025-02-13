@@ -15,5 +15,6 @@ public class Main {
         // Cambiar de estrategia a un ataque de estado
         pikachu.setAttackStrategy(new StatusAttack());
         pikachu.performAttack(); // Pikachu usó un ataque de ESTADO.
+        
     }
 }
