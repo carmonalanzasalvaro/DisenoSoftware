@@ -5,4 +5,5 @@ class PhysicalAttack implements AttackStrategy {
     public void attack(String pokemonName) {
         System.out.println(pokemonName + " usó un ataque FÍSICO. ¡Golpe poderoso!");
     }
+
 }
