@@ -4,4 +4,7 @@ public interface Strategy extends Consulta{
     void examinar();
     void enviarFactura();
     void enviarResultado();
+
+
 }
+//No hay que implementar el método de consulta?? Aunque sea de una manera absttracta??? es decir, sin inicializar ni nada.
