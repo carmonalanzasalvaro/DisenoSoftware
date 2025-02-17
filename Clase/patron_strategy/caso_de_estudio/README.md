@@ -21,7 +21,7 @@ El contexto es el objeto cuyo comportamiento varía en función de la estrategia
 
 ```java
 public class Guarderia {
-    private Strategy strategy;
+    private Strategy strategy; // 🔹 Esta es una referencia a un objeto de tipo Strategy.
 
     public Guarderia(Strategy strategy) {
         this.strategy = strategy;
@@ -36,9 +36,22 @@ public class Guarderia {
     }
 }
 ```
-**Explicación:**
-- `Guarderia` mantiene una referencia a `Strategy`, que puede cambiar dinámicamente.
-- `realizarConsulta()` llama al método `realizarConsulta()` de la estrategia actual, sin saber qué estrategia específica se está usando.
+
+### 📌 **Explicación sobre las Referencias en Java**
+
+#### 🔹 **¿Qué es una referencia en este contexto?**
+Una referencia es un puntero a un objeto en memoria, pero **por sí sola no es un objeto**. En este caso, `private Strategy strategy;` es una referencia que puede apuntar a cualquier objeto que implemente `Strategy`.
+
+#### 🔹 **¿Por qué usamos una referencia en lugar de un objeto concreto?**
+Usamos una referencia porque:
+- Nos permite cambiar dinámicamente la estrategia sin necesidad de modificar `Guarderia`.
+- Habilita el **polimorfismo**, permitiendo que `strategy` pueda ser reemplazado por cualquier implementación concreta (`StrategyOculista`, `StrategyLogopeda`, etc.).
+- Separa la lógica de `Guarderia` de la implementación específica de las estrategias.
+
+#### 🔹 **¿Cómo se usa en el código?**
+- `Guarderia` mantiene una referencia a un objeto de tipo `Strategy`, que define los métodos `examinar()`, `enviarFactura()` y `enviarResultado()`.
+- `realizarConsulta()` (de `Guarderia`) llama al método `realizarConsulta()` de la estrategia actualmente asignada, sin conocer cuál es su implementación específica.
+- La **implementación real** de los métodos (`examinar()`, `enviarFactura()`, `enviarResultado()`) recae exclusivamente sobre cada estrategia concreta (`StrategyOculista`, `StrategyLogopeda`, `StrategyGenerica`).
 
 ---
 
@@ -58,8 +71,26 @@ public interface Strategy extends Consulta {
 
 ---
 
-### 3️⃣ **Clases Concretas (Implementaciones de `Strategy`)**
+### 3️⃣ **Interfaz `Consulta` y su Propósito**
+
+Aunque `Consulta` no es parte estrictamente del **Patrón Strategy**, se introduce para mejorar la abstracción en el código.
+
+```java
+public interface Consulta {
+    void realizarConsulta();
+}
+```
+
+**¿Para qué sirve?**
+- **Aumenta la abstracción**: `Guarderia` solo interactúa con `Strategy` a través del método `realizarConsulta()`, sin preocuparse por los detalles de `examinar()`, `enviarFactura()` ni `enviarResultado()`.
+- **Facilita el mantenimiento**: Al extender `Strategy` de `Consulta`, todas las estrategias concretas **deben** implementar `realizarConsulta()`, lo que estandariza la forma en que se ejecutan las consultas.
+- **Mejora la encapsulación**: `Guarderia` solo necesita llamar `realizarConsulta()`, dejando que las estrategias manejen sus propias acciones internas.
+
+---
+
+### 4️⃣ **Clases Concretas (Implementaciones de `Strategy`)**
 Cada estrategia representa un tipo diferente de consulta.
+
 
 #### **🟢 `StrategyOculista` (Día 15)**
 ```java
@@ -135,54 +166,8 @@ public class StrategyGenerica implements Strategy {
 
 ---
 
-## 🔍 **Interfaz `Consulta` y su Propósito**
-
-En este proyecto, **la interfaz `Consulta` no es parte del Patrón Strategy**, sino que **aumenta la abstracción de `Guarderia`**. `Consulta` permite que `Guarderia` no tenga que saber qué métodos concretos tiene cada estrategia.
-
-```java
-public interface Consulta {
-    void realizarConsulta();
-}
-```
-**Explicación:**
-- `Consulta` solo define `realizarConsulta()`, sin exponer `examinar()`, `enviarFactura()` ni `enviarResultado()`.
-- Cada estrategia implementa `Consulta`, lo que permite a `Guarderia` llamar `realizarConsulta()` sin conocer los detalles internos.
-
----
-
-## 🏃‍♂️ **Ejemplo de Uso en `Main.java`**
-```java
-public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        Guarderia guarderia = new Guarderia(new StrategyGenerica());
-        System.out.println("Introduzca el día de hoy (número entero): ");
-        int dia = sc.nextInt();
-
-        switch (dia) {
-            case 15:
-                guarderia.setStrategy(new StrategyOculista());
-                System.out.println("--- Día 15: Visita del Oculista ---");
-                break;
-            case 28:
-                guarderia.setStrategy(new StrategyLogopeda());
-                System.out.println("--- Día 28: Visita del Logopeda ---");
-                break;
-            default:
-                guarderia.setStrategy(new StrategyGenerica());
-                System.out.println("--- Visita del médico de guardia ---");
-                break;
-        }
-        guarderia.realizarConsulta();
-        sc.close();
-    }
-}
-```
-
----
-
 ## 🚀 **Conclusión**
-✅ `Guarderia` puede cambiar de estrategia dinámicamente sin modificar su código.
+✅ `Guarderia` ahora puede cambiar de estrategia dinámicamente sin modificar su código.
 ✅ `Strategy` define una interfaz clara que permite agregar nuevas estrategias fácilmente.
 ✅ `Consulta` aumenta la abstracción y mantiene a `Guarderia` desacoplada de `Strategy`.
 
