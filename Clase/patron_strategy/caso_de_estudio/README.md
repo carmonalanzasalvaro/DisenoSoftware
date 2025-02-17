@@ -50,13 +50,13 @@ Usamos una referencia porque:
 
 #### 🔹 **¿Cómo se usa en el código?**
 - `Guarderia` mantiene una referencia a un objeto de tipo `Strategy`, que define los métodos `examinar()`, `enviarFactura()` y `enviarResultado()`.
-- `realizarConsulta()` (de `Guarderia`) llama al método `realizarConsulta()` de la estrategia actualmente asignada, sin conocer cuál es su implementación específica.
+- `realizarConsulta()` (de la clase `Guarderia`) llama al método `realizarConsulta()` de la estrategia correspondiente, sin conocer cuál es su implementación específica.
 - La **implementación real** de los métodos (`examinar()`, `enviarFactura()`, `enviarResultado()`) recae exclusivamente sobre cada estrategia concreta (`StrategyOculista`, `StrategyLogopeda`, `StrategyGenerica`).
 
 ---
 
 ### 2️⃣ **Interfaz `Strategy` (Definición de la Estrategia)**
-Define los métodos que todas las estrategias deben implementar.
+Define los métodos que todas las estrategias deben implementar. Se debe de entender como un contrato que las estrategias deben de cumplir.
 
 ```java
 public interface Strategy extends Consulta {
@@ -167,7 +167,7 @@ public class StrategyGenerica implements Strategy {
 ---
 
 ## 🚀 **Conclusión**
-✅ `Guarderia` ahora puede cambiar de estrategia dinámicamente sin modificar su código.
+✅ `Guarderia` puede cambiar de estrategia dinámicamente sin modificar su código.
 ✅ `Strategy` define una interfaz clara que permite agregar nuevas estrategias fácilmente.
 ✅ `Consulta` aumenta la abstracción y mantiene a `Guarderia` desacoplada de `Strategy`.
 
