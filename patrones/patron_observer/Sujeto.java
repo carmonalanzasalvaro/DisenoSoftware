@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Sujeto{
+    
     private String state;
     private List<Observador> observadores = new ArrayList<>();
 
