@@ -16,7 +16,7 @@ Incluye:
 ✔️ **Ejemplos prácticos** con código comentado para facilitar el aprendizaje.  
 
 🔗 **Accede a esta sección:**  
-[![Introducción a Java](https://img.shields.io/badge/-📖%20Introducción%20a%20Java-blue?style=for-the-badge&logo=java)](https://github.com/carmonalanzasalvaro/DisenoSoftware/tree/main/introduccion_java)  
+[![Introducción a Java](https://img.shields.io/badge/-📖%20Introducción%20a%20Java-blue?style=for-the-badge)](https://github.com/carmonalanzasalvaro/DisenoSoftware/tree/main/introduccion_java)  
 
 ---
 
@@ -59,7 +59,7 @@ Los patrones de diseño se dividen en tres categorías principales:
 Cada uno de estos patrones será explicado en detalle dentro de su respectivo directorio en este repositorio.  
 
 🔗 **Accede a esta sección:**  
-[![Patrones de Diseño](https://img.shields.io/badge/-📂%20Patrones%20de%20Diseño-red?style=for-the-badge&logo=codefactor)](https://github.com/carmonalanzasalvaro/DisenoSoftware/tree/main/patrones_de_diseño)  
+[![Patrones de Diseño](https://img.shields.io/badge/-📂%20Patrones%20de%20Diseño-red?style=for-the-badge)](https://github.com/carmonalanzasalvaro/DisenoSoftware/tree/main/patrones)  
 
 ---
 
