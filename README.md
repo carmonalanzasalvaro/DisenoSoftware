@@ -22,39 +22,67 @@ Incluye:
 
 ### 👨‍💻 Patrones de Diseño en Java  
 
-#### 🔍 ¿Qué son los patrones de diseño?  
-Los **patrones de diseño** son soluciones reutilizables a problemas comunes en el diseño de software. No son fragmentos de código específicos, sino estrategias probadas para estructurar y organizar el código de manera más eficiente y mantenible.  
+🔍 <strong>¿Qué son los patrones de diseño?</strong>  
+```txt
+Los patrones de diseño son soluciones reutilizables a problemas comunes en el diseño de software.  
+No son fragmentos de código específicos, sino estrategias probadas para estructurar y organizar  
+el código de manera más eficiente y mantenible.  
 
-Los patrones **ayudan a mejorar la escalabilidad, flexibilidad y legibilidad del código**, proporcionando estructuras bien definidas que permiten solucionar problemas recurrentes sin reinventar la rueda.  
+Los patrones ayudan a mejorar la escalabilidad, flexibilidad y legibilidad del código,  
+proporcionando estructuras bien definidas que permiten solucionar problemas recurrentes  
+sin reinventar la rueda.  
+```
 
-#### ⚡ ¿Por qué existen los patrones de diseño?  
-Durante el desarrollo de software, ciertos problemas y desafíos se repiten constantemente. En lugar de abordarlos de manera improvisada, los patrones de diseño ofrecen una **base estandarizada y probada** que facilita la implementación de soluciones eficientes.  
+⚡ <strong>¿Por qué existen los patrones de diseño?</strong>  
+```txt
+Durante el desarrollo de software, ciertos problemas y desafíos se repiten constantemente.  
+En lugar de abordarlos de manera improvisada, los patrones de diseño ofrecen una  
+base estandarizada y probada que facilita la implementación de soluciones eficientes.  
 
-🔹 **Estandarización**: Permiten que múltiples desarrolladores trabajen bajo un mismo esquema, facilitando el mantenimiento.  
-🔹 **Reutilización**: Evitan la reinvención de soluciones, acelerando el desarrollo.  
-🔹 **Flexibilidad y escalabilidad**: Facilitan la expansión y modificación del código sin generar problemas inesperados.  
-🔹 **Mejora en la arquitectura del software**: Separan responsabilidades y reducen la dependencia entre clases.  
+🔹 Estandarización:
 
-#### 📌 Patrones más utilizados en la industria  
+   Permiten que múltiples desarrolladores trabajen bajo un mismo esquema,  
+   facilitando el mantenimiento.
+
+🔹 Reutilización:
+
+   Evitan la reinvención de soluciones, acelerando el desarrollo.
+ 
+🔹 Flexibilidad y escalabilidad:
+
+   Facilitan la expansión y modificación del código  
+   sin generar problemas inesperados.
+
+🔹 Mejora en la arquitectura del software:
+
+   Separan responsabilidades y reducen  
+   la dependencia entre clases.  
+```
+
+📌 <strong>Patrones más utilizados en la industria</strong>  
+```txt
 Los patrones de diseño se dividen en tres categorías principales:  
 
-🏭 **Patrones Creacionales** – Facilitan la creación de objetos de manera flexible y eficiente.  
+🏭 Patrones Creacionales – Facilitan la creación de objetos de manera flexible y eficiente.  
 - Factory Method  
 - Singleton  
 - Builder  
 - Prototype  
 
-📂 **Patrones Estructurales** – Ayudan a organizar clases y objetos para mejorar la eficiencia y reutilización.  
+📂 Patrones Estructurales – Ayudan a organizar clases y objetos para mejorar  
+   la eficiencia y reutilización.  
 - Adapter  
 - Composite  
 - Decorator  
 - Proxy  
 
-🛠 **Patrones de Comportamiento** – Definen la comunicación y relación entre objetos en tiempo de ejecución.  
+🔨✂🔧 Patrones de Comportamiento – Definen la comunicación y relación entre objetos  
+   en tiempo de ejecución.  
 - Observer  
 - Strategy  
 - Command  
 - State  
+```
 
 Cada uno de estos patrones será explicado en detalle dentro de su respectivo directorio en este repositorio.  
 
