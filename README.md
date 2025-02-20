@@ -15,11 +15,12 @@ Incluye:
 ✔️ **Entrada y salida de datos**: Uso de `Scanner`, `JOptionPane` y otros mecanismos de entrada.  
 ✔️ **Ejemplos prácticos** con código comentado para facilitar el aprendizaje.  
 
-📂 Contenido en la carpeta: `introduccion_java/`  
+🔗 **Accede a esta sección:**  
+[![Introducción a Java](https://img.shields.io/badge/-📖%20Introducción%20a%20Java-blue?style=for-the-badge&logo=java)](https://github.com/carmonalanzasalvaro/DisenoSoftware/tree/main/introduccion_java)  
 
 ---
 
-### 🎯 Patrones de Diseño en Java  
+### 👨‍💻 Patrones de Diseño en Java  
 
 #### 🔍 ¿Qué son los patrones de diseño?  
 Los **patrones de diseño** son soluciones reutilizables a problemas comunes en el diseño de software. No son fragmentos de código específicos, sino estrategias probadas para estructurar y organizar el código de manera más eficiente y mantenible.  
@@ -37,7 +38,7 @@ Durante el desarrollo de software, ciertos problemas y desafíos se repiten cons
 #### 📌 Patrones más utilizados en la industria  
 Los patrones de diseño se dividen en tres categorías principales:  
 
-📂 **Patrones Creacionales** – Facilitan la creación de objetos de manera flexible y eficiente.  
+🏭 **Patrones Creacionales** – Facilitan la creación de objetos de manera flexible y eficiente.  
 - Factory Method  
 - Singleton  
 - Builder  
@@ -49,7 +50,7 @@ Los patrones de diseño se dividen en tres categorías principales:
 - Decorator  
 - Proxy  
 
-📂 **Patrones de Comportamiento** – Definen la comunicación y relación entre objetos en tiempo de ejecución.  
+🛠 **Patrones de Comportamiento** – Definen la comunicación y relación entre objetos en tiempo de ejecución.  
 - Observer  
 - Strategy  
 - Command  
@@ -57,7 +58,8 @@ Los patrones de diseño se dividen en tres categorías principales:
 
 Cada uno de estos patrones será explicado en detalle dentro de su respectivo directorio en este repositorio.  
 
-📂 Contenido en la carpeta: `patrones_de_diseño/` _(en desarrollo)_  
+🔗 **Accede a esta sección:**  
+[![Patrones de Diseño](https://img.shields.io/badge/-📂%20Patrones%20de%20Diseño-red?style=for-the-badge&logo=codefactor)](https://github.com/carmonalanzasalvaro/DisenoSoftware/tree/main/patrones_de_diseño)  
 
 ---
 
@@ -76,4 +78,4 @@ Si tienes preguntas o sugerencias, no dudes en contactarme:
 
 ---
 
-🛠 **Repositorio en constante evolución.** Se irán agregando nuevos patrones y ejemplos progresivamente.
+🛠 **Repositorio en constante evolución.** Se irán agregando nuevos patrones y ejemplos progresivamente. 
