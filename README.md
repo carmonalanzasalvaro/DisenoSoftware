@@ -76,7 +76,7 @@ Los patrones de diseño se dividen en tres categorías principales:
 - Decorator  
 - Proxy  
 
-🔨✂🔧 Patrones de Comportamiento – Definen la comunicación y relación entre objetos  
+🔨🔧 Patrones de Comportamiento – Definen la comunicación y relación entre objetos  
    en tiempo de ejecución.  
 - Observer  
 - Strategy  
