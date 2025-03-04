@@ -9,6 +9,7 @@ public class Main {
         //Rol de por defecto (!dia 15 o 28)
         System.out.println("Introduzca el día de hoy (número entero): ");
         int dia = sc.nextInt();
+        
         switch (dia) {
 
             case 15:

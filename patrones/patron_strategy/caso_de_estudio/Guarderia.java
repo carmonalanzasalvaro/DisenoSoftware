@@ -3,7 +3,7 @@ package patrones.patron_strategy.caso_de_estudio;
 public class Guarderia{
 
     private Strategy strategy;
-
+    
     public Guarderia(Strategy strategy){
         this.strategy = strategy;
     }

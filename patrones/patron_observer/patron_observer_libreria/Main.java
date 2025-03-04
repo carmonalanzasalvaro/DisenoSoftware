@@ -15,6 +15,7 @@ public class Main {
         // Simular cambios de estado
         sujeto.cambiarEstado("Activo");
         sujeto.cambiarEstado("Inactivo");
+        
     }
 }
 

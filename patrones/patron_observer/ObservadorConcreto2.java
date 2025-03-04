@@ -1,4 +1,4 @@
-package patrones.patron_observer;
+package patrones.patron_observer.;
 
 public class ObservadorConcreto2 implements Observador{
     
