@@ -1,8 +1,9 @@
-package patrones.patron_observer.patron_observer_libreria;
+package patron_observer_libreria;
 
 import java.util.Observable;
 
 public class Sujeto extends Observable {
+    
     private String estado;
 
     public void cambiarEstado(String nuevoEstado) {

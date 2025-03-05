@@ -1,4 +1,4 @@
-package patrones.patron_observer;
+package patron_observer_explicativo;
 
 import java.util.ArrayList;
 import java.util.List;

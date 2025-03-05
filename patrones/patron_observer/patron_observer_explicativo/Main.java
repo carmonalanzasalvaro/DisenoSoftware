@@ -1,4 +1,4 @@
-package patrones.patron_observer;
+package patron_observer_explicativo;
 //Publicador - Suscriptor --> Sujeto - Observador
 public class Main {
     public static void main(String[] args) {

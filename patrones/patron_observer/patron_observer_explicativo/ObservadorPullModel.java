@@ -1,4 +1,4 @@
-package patrones.patron_observer;
+package patron_observer_explicativo;
 
 public class ObservadorPullModel implements Observador{
 

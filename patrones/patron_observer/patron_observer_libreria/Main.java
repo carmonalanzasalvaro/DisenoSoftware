@@ -1,4 +1,4 @@
-package patrones.patron_observer.patron_observer_libreria;
+package patron_observer_libreria;
 
 public class Main {
     public static void main(String[] args) {
